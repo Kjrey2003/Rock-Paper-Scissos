@@ -1,0 +1,14 @@
+html body{
+    padding: 0;
+    margin: 0;
+    display: grid;
+}
+img{
+    display: grid;
+    height: 80%;
+
+}
+
+.form{
+    padding-top: 20px;
+}
