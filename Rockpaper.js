@@ -15,17 +15,33 @@ function oneRound(computerSelection, playerSelection){
         (playerSelection == 'paper' && computerSelection == 'rock'))
     {
         playerScore +=1;
+       result = console.log("You won this round because " + playerSelection + " beats " + computerSelection);
     }
-    if(playerScore == 5){
-        alert("Player wins");
+    else if (computerScore+=1){
+       computerScore+=1
+        result = console.log("You lost this round because " + computerSelection + " beats " + playerSelection);
+    }
+
+    else if(playerScore == 5){
+       result =  console.log("Player wins");
     }
     else if(computerScore == 5){
-        alert("Computer wins")
+        result = console.log("Computer wins")
     }
-    else if(playerScore == computerScore){
-        alert("It is a tie")
+     else if(playerScore === computerScore) {
+
+        console.log("The game is a tie")
+
     }
+
+     else if(playerSelection === computerSelection){
+         console.log("It is a tie because " + playerSelection + " is the same as " + computerSelection)
+    }
+
 
 }
 
+function fiveTime(){
+    for(i=0; i <=6; i++){}
+}
 
