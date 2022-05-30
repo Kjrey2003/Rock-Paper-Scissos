@@ -1,53 +1,31 @@
- function computerPlay() {
-     let choices = ['rock', 'paper', 'scissors']
-     return choices[Math.floor(Math.random() * choices.length)]
+function computerPlay(){
+    let options = ["rock", "paper", "scissors"];
+    let rand = options[(Math.floor(Math.random() * options.length))];
+    return rand;
+}
 
-
-
- }
-
-
-function Rounds(userSelection, computerSelection) {
+function oneRound(computerSelection, playerSelection){
     computerSelection = computerPlay();
-    let playerScore = 0;
-    let computerScore = 0;
-    let result = '';
-    let resultOfGame = '';
+    result = ''
+    playerScore = 0;
+    computerScore = 0;
 
-    userSelection = prompt('Enter rock, paper, or scissors');
-    if (
-        ((userSelection == 'rock' && computerSelection == 'scissors') ||
-            (userSelection == 'paper' && computerSelection == 'rock') ||
-            (userSelection == 'scissors' && computerSelection == 'paper'))
-    ) {
-        playerScore += 1;
-        result = alert("You have won this Round");
+    if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper') ||
+        (playerSelection == 'paper' && computerSelection == 'rock'))
+    {
+        playerScore +=1;
     }
     if(playerScore == 5){
-        alert("You win this game");
+        alert("Player wins");
+    }
+    else if(computerScore == 5){
+        alert("Computer wins")
+    }
+    else if(playerScore == computerScore){
+        alert("It is a tie")
     }
 
-    else if(
-        (computerSelection == 'rock' && userSelection == 'scissors') ||
-        (computerSelection == 'paper' && userSelection == 'rock') ||
-        (computerSelection == 'scissors' && userSelection == 'paper'))
-    {
-           computerScore += 1;
-           result = alert("The computer has won this round");
-    }
-    if(computerScore == 5){
-        alert("You have lost this game")
-    }
-
-
-    else if(userSelection == computerSelection){
-        result = alert("It's a tie bruv");
-    }
 }
-Rounds();
-
-
-
-
 
 
