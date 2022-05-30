@@ -6,9 +6,9 @@ function computerPlay(){
 
 function oneRound(computerSelection, playerSelection){
     computerSelection = computerPlay();
-    result = ''
-    playerScore = 0;
-    computerScore = 0;
+  let   result = ''
+    let playerScore = 0;
+    let computerScore = 0;
 
     if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
         (playerSelection == 'scissors' && computerSelection == 'paper') ||
