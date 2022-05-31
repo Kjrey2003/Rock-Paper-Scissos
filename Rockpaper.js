@@ -4,9 +4,15 @@ function computerPlay(){
     return rand;
 }
 
+function select(){
+    let playerSelection;
+          playerSelection = console.log("Enter Rock, Paper, or scissors");
+    }
+    
+
 function oneRound(computerSelection, playerSelection){
     computerSelection = computerPlay();
-  let   result = ''
+    let   result = ''
     let playerScore = 0;
     let computerScore = 0;
 
@@ -42,6 +48,8 @@ function oneRound(computerSelection, playerSelection){
 }
 
 function fiveTime(){
-    for(i=0; i <=6; i++){}
+    for(i=0; i <=6; i++){
+        oneRound();
+    }
 }
 
