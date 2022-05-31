@@ -1,4 +1,3 @@
-
 let playerScore = 0;
 let computerScore = 0; 
 
@@ -100,15 +99,4 @@ function oneRound(computerSelection, playerSelection){
 
    
    
-   // result = alert("You won this round because " + playerSelection + " beats " + computerSelection + " your score " + playerScore + 
-    // "  computer's score " + computerScore);
-
-
-    
-    
-    
-    
-    //return result;
-
-
 }
