@@ -1,16 +1,20 @@
+// creates the score variables in a way where it doesn't refresh everytime the loops reiterate 
 let playerScore = 0;
 let computerScore = 0; 
 
-
+// a function to randomly select rock, paper, or scissors from an array
 function computerPlay(){
-    let options = ["rock", "paper", "scissors"];
+    let options = ["rock", "paper","scissors"];
     let rand = options[(Math.floor(Math.random() * options.length))];
-    return rand;
+   return rand;
 }
 
+//const rockButton = document.querySelector(".rock");
+//const paperButton = document.querySelector(".paper");
+//const scissorsButton = document.querySelector(".scissors");
+ form.forEach(button => { button.addEventListener('click', getPlayerChoice) });
 
-
-         
+// a function to run one round of rock, paper, scissors         
 function oneRound(computerSelection, playerSelection){
     computerSelection = computerPlay();
     playerSelection =  prompt("Enter rock, paper, or scissors");
@@ -18,65 +22,75 @@ function oneRound(computerSelection, playerSelection){
   
    
 
-    
+        // sets the rules and points gain for the player
         if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
         (playerSelection == 'scissors' && computerSelection == 'paper') ||
         (playerSelection == 'paper' && computerSelection == 'rock'))
     {
        playerScore +=1;
-        result = alert("You won this round becase " + playerSelection + " beats " + computerSelection + " your score is " + playerScore)
+       result = document.createElement('h4');
+                document.body.appendChild(result);
+        result.textContent = "You won this round becase " + playerSelection + " beats " + computerSelection + " your score is " + playerScore;
        
        
 
            
     }
+    // sets rules and points gain for the computer
     else if (
         (computerSelection == 'rock' && playerSelection == 'scissors') ||
         (computerSelection == 'scissors' && playerSelection == 'paper') ||
         (computerSelection == 'paper' && playerSelection == 'rock'))
         {
             computerScore+=1
-            result = alert("You lost this round because " + computerSelection + " beats " + playerSelection + " the computer's score  " + computerScore + 
-            " your score " + playerScore);
+            result = document.createElement('h4');
+            document.body.appendChild(result);
+
+            result.textContent = "You lost this round because " + computerSelection + " beats " + playerSelection + " the computer's score  " + computerScore + 
+            " your score " + playerScore;
         
         }
-
-   if(playerSelection === computerSelection){
-            result =  alert("It is a tie because " + playerSelection + " is the same as " + computerSelection + "  your score is " + 
-            playerScore );
+        // in case of tie 
+         if(playerSelection === computerSelection){
+            result =  document.createElement('h1');
+            document.body.appendChild(result);
+             result.textContent = "It is a tie because " + playerSelection + " is the same as " + computerSelection + "  your score is " + 
+            playerScore;
              }
-
+             // in case user loses
              if(computerScore == 5){
-                result = console.log("Computer wins")
+                result = document.createElement('h1');
+                document.body.appendChild(result);
+                result.textContent = "Computer wins";
             }
         
-        
+            // in case user wins 
             if(playerScore == 5){
-                result =  console.log("Player wins");
+                result = document.createElement('h1');
+                document.body.appendChild(result);
+                result.textContent = "Player wins";
              }
                
-        if(computerScore == 5){
-            result = alert("Computer wins")
-        }
-        
-        
-        if(playerScore == 5){
-            result =  alert("Player wins");
-         }
            
          return result;
         
         }
         
-        function countingScore(){
-            let scoreTrackUser = playerScore;
-            let scoreTrackComputer = computerScore
-        }
-        
-        
-        function game(){
+
+
+
+
+
+        function getPlayerChoice(e) {
+            let playerSelection= (e.target.id);
+            playerChoice = e.target.textContent;
+            playRound(playerSelection, computerPlay());
+          }
+
+        // function to repeat the rounds five times, and to determines who wins at the end of the game
+         
  
-    for(let i = 0; i < 5; i++){
+   /* for(let i = 0; i < 5; i++){
     oneRound();
     
             }
@@ -89,6 +103,11 @@ function oneRound(computerSelection, playerSelection){
         alert("You lost and your score was " + playerScore + " points" )
     }
 
+    else if(computerScore && playerScore ===0){
+        alert("It is a tie")
+        return game();
+    }
+
     else{
         alert("The game is a tie your score is " + playerScore + " and the computer's is " + computerScore)
 }
@@ -97,6 +116,8 @@ function oneRound(computerSelection, playerSelection){
     return result;
 
 
+*/
+
    
-   
-}
+
+ 
