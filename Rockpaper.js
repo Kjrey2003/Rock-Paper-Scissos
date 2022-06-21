@@ -1,6 +1,7 @@
 // creates the score variables in a way where it doesn't refresh everytime the loops reiterate 
 let playerScore = 0;
 let computerScore = 0; 
+const buttons = document.querySelectorAll('input')
 
 // a function to randomly select rock, paper, or scissors from an array
 function computerPlay(){
@@ -9,15 +10,30 @@ function computerPlay(){
    return rand;
 }
 
+
+//function getPlayerSelection(){
+    //document.querySelector("#rock").playerSelection.rock;
+//document.getElementById('rock').addEventListener('click',function(){
+  // playerSelection == 'rock'
+//});
+//document.getElementById('paper').addEventListener('click',function(){
+  //   playerSelection == "paper"});
+//document.getElementById('scissors').addEventListener('click',function(){
+  // playerSelection == 'scissors'})
+//console.log(getPlayerSelection);
+
+//}
+        
+
+
 //const rockButton = document.querySelector(".rock");
 //const paperButton = document.querySelector(".paper");
 //const scissorsButton = document.querySelector(".scissors");
- form.forEach(button => { button.addEventListener('click', getPlayerChoice) });
+
 
 // a function to run one round of rock, paper, scissors         
-function oneRound(computerSelection, playerSelection){
+function oneRound(playerSelection){
     computerSelection = computerPlay();
-    playerSelection =  prompt("Enter rock, paper, or scissors");
     result = '';
   
    
@@ -73,20 +89,20 @@ function oneRound(computerSelection, playerSelection){
                
            
          return result;
+            }
         
-        }
+        
+        
+            buttons.forEach(button =>{
+                button.addEventListener('click', function(){
+                    oneRound(button.value)
+                })
+            })
         
 
 
-
-
-
-        function getPlayerChoice(e) {
-            let playerSelection= (e.target.id);
-            playerChoice = e.target.textContent;
-            playRound(playerSelection, computerPlay());
-          }
-
+        
+        
         // function to repeat the rounds five times, and to determines who wins at the end of the game
          
  
