@@ -1,7 +1,8 @@
 // creates the score variables in a way where it doesn't refresh everytime the loops reiterate 
 let playerScore = 0;
 let computerScore = 0; 
-const buttons = document.querySelectorAll('input')
+const buttons = document.querySelectorAll('button')
+
 
 // a function to randomly select rock, paper, or scissors from an array
 function computerPlay(){
@@ -10,20 +11,16 @@ function computerPlay(){
    return rand;
 }
 
+/*function getPlayerSelection(){
+    document.getElementById('rock').value;
+    document.getElementById('paper').value;
+    document.getElementById('scissors').value;
+    console.log(getPlayerSelection);}
+*/
 
-//function getPlayerSelection(){
-    //document.querySelector("#rock").playerSelection.rock;
-//document.getElementById('rock').addEventListener('click',function(){
-  // playerSelection == 'rock'
-//});
-//document.getElementById('paper').addEventListener('click',function(){
-  //   playerSelection == "paper"});
-//document.getElementById('scissors').addEventListener('click',function(){
-  // playerSelection == 'scissors'})
-//console.log(getPlayerSelection);
 
-//}
         
+
 
 
 //const rockButton = document.querySelector(".rock");
@@ -34,6 +31,7 @@ function computerPlay(){
 // a function to run one round of rock, paper, scissors         
 function oneRound(playerSelection){
     computerSelection = computerPlay();
+    playerSelection = getPlayerSelection;
     result = '';
   
    
@@ -93,13 +91,11 @@ function oneRound(playerSelection){
         
         
         
-            buttons.forEach(button =>{
-                button.addEventListener('click', function(){
-                    oneRound(button.value)
-                })
-            })
         
-
+        
+    button.addEventListener('click', function(){
+    playRound(button.value)
+    })
 
         
         
@@ -136,4 +132,4 @@ function oneRound(playerSelection){
 
    
 
- 
+    
