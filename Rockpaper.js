@@ -31,7 +31,6 @@ function computerPlay(){
 // a function to run one round of rock, paper, scissors         
 function oneRound(playerSelection){
     computerSelection = computerPlay();
-    playerSelection = getPlayerSelection;
     result = '';
   
    
@@ -93,9 +92,11 @@ function oneRound(playerSelection){
         
         
         
-    button.addEventListener('click', function(){
-    playRound(button.value)
-    })
+            buttons.forEach(button =>{
+                button.addEventListener('click', function(){
+                    playRound(button.value)
+                })
+            })
 
         
         
