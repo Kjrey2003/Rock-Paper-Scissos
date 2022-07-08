@@ -1,7 +1,7 @@
 // creates the score variables in a way where it doesn't refresh everytime the loops reiterate 
 let playerScore = 0;
 let computerScore = 0; 
-const buttons = document.querySelectorAll('button')
+const selectionButtons = document.querySelectorAll('[data-selection]')
 
 
 // a function to randomly select rock, paper, or scissors from an array
@@ -11,26 +11,26 @@ function computerPlay(){
    return rand;
 }
 
-/*function getPlayerSelection(){
-    document.getElementById('rock').value;
-    document.getElementById('paper').value;
-    document.getElementById('scissors').value;
-    console.log(getPlayerSelection);}
-*/
-
-
-        
 
 
 
-//const rockButton = document.querySelector(".rock");
-//const paperButton = document.querySelector(".paper");
-//const scissorsButton = document.querySelector(".scissors");
+selectionButtons.forEach(selectionButton => {
+    selectionButton.addEventListener('click', e =>{
+       const selectionName = selectionButton.dataset.selection
+        makeSelection(selectionName)
+    })
+        })
 
 
+
+ function makeSelection(selection){
+    console.log(selection);
+ }       
+ 
 // a function to run one round of rock, paper, scissors         
 function oneRound(playerSelection){
     computerSelection = computerPlay();
+    
     result = '';
   
    
@@ -92,13 +92,18 @@ function oneRound(playerSelection){
         
         
         
-            buttons.forEach(button =>{
-                button.addEventListener('click', function(){
-                    playRound(button.value)
-                })
-            })
 
-        
+
+
+
+
+
+
+
+
+
+
+
         
         // function to repeat the rounds five times, and to determines who wins at the end of the game
          
